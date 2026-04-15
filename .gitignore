@@ -1,0 +1,114 @@
+# ===== OS =====
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ===== Editors / IDEs =====
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-workspace
+*.sublime-project
+.project
+.settings/
+nbproject/
+
+# ===== Logs =====
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ===== Env / secrets =====
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# ===== Node (future-proof, no build today) =====
+node_modules/
+.npm/
+.yarn/
+.pnp.*
+.pnpm-store/
+
+# ===== Build output (future-proof) =====
+dist/
+build/
+out/
+.cache/
+.parcel-cache/
+.vite/
+.next/
+.nuxt/
+.turbo/
+.svelte-kit/
+
+# ===== Test / coverage =====
+coverage/
+.nyc_output/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# ===== Python (used for local static server) =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.python-version
+
+# ===== Temp / backup =====
+*.tmp
+*.temp
+*.bak
+*.orig
+*.rej
+
+# ===== Agentic dev tooling =====
+# Claude Code - keep shared project config, drop local/cache
+.claude/settings.local.json
+.claude/cache/
+.claude/logs/
+.claude/projects/
+.claude/statsig/
+.claude/shell-snapshots/
+.claude/todos/
+.claude/ide/
+
+# Anthropic Superpowers scratch (brainstorm, plans, transient notes)
+.superpowers/
+
+# Playwright MCP page snapshots / scratch
+.playwright-mcp/
+
+# Other AI coding assistants
+.aider*
+.cursor/
+.cursorindexingignore
+.windsurf/
+.continue/
+.codex/
+.copilot/
+.tabnine/
+.ai/
+AGENT_LOG*
+SCRATCH*
+.scratch/
