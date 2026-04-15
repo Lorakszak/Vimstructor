@@ -79,6 +79,8 @@ export const Progress = {
     return data;
   },
 
+  // Queues a debounced write, not a synchronous persist. Subsequent
+  // calls while a save is pending are collapsed into the pending one.
   save() {
     if (saveTimer !== null) return;
     saveTimer = setTimeout(() => {
@@ -197,9 +199,5 @@ export const Progress = {
       saveTimer = null;
     }
     flushNow();
-  },
-
-  _data() {
-    return data;
   },
 };
