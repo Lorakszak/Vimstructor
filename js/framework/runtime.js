@@ -1,6 +1,6 @@
 /**
  * Runtime is the contract every tool engine implements. The framework
- * never reaches into engine internals — it only uses the methods below.
+ * never reaches into engine internals. It only uses the methods below.
  *
  * Each engine defines its own snapshot shape. Check predicates receive
  * the snapshot (plain object, JSON-serializable), not the live engine.
