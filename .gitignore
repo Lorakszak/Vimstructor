@@ -95,6 +95,7 @@ venv/
 
 # Anthropic Superpowers scratch (brainstorm, plans, transient notes)
 .superpowers/
+docs/superpowers/
 
 # Playwright MCP page snapshots / scratch
 .playwright-mcp/
