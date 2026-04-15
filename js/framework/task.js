@@ -37,12 +37,19 @@ export class TaskRunner {
     this._checkFn = null;
     this._initialState = null;
     this._done = false;
+    this._mounted = false;
 
     this._onChange = this._onChange.bind(this);
     this._onKeyPress = this._onKeyPress.bind(this);
   }
 
   start(mountTarget) {
+    // The Runtime contract has no off(), so a second start() without
+    // dispose() would leak change/keypress listeners. Fail loud instead.
+    if (this._mounted) {
+      throw new Error('TaskRunner.start() called twice; call dispose() first');
+    }
+    this._mounted = true;
     this._initialState = this._buildInitialState();
     this.runtime.mount(mountTarget, this._initialState);
     this._startedAtMs = Date.now();
@@ -82,6 +89,7 @@ export class TaskRunner {
   dispose() {
     if (this._constraintCleanup) this._constraintCleanup();
     this._constraintCleanup = null;
+    this._mounted = false;
   }
 
   getHint() {
@@ -137,6 +145,7 @@ export class TaskRunner {
   _fail(reason) {
     if (this._done) return;
     this._done = true;
+    if (this._constraintCleanup) this._constraintCleanup();
     this.handlers.onFail(reason);
   }
 }
